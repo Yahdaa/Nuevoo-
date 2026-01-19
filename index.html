@@ -2296,11 +2296,42 @@ setInterval(checkScheduledChapters, 60000);
         </button>
       </div>
       
-      <!-- Formulario de Teléfono (próximamente) -->
+      <!-- Formulario de Teléfono -->
       <div id="phone-form-content" class="hidden">
-        <div class="text-center py-12">
-          <p class="text-gray-500 mb-4">Inicio de sesión con teléfono</p>
-          <p class="text-sm text-gray-400">Próximamente disponible</p>
+        <form id="phoneStepForm" class="space-y-4" onsubmit="event.preventDefault(); handlePhoneLogin();">
+          <div class="flex gap-2">
+            <select id="countryCode" class="w-20 p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900 transition">
+              <option value="+1">🇺🇸 +1</option>
+              <option value="+34">🇪🇸 +34</option>
+              <option value="+55">🇧🇷 +55</option>
+              <option value="+44">🇬🇧 +44</option>
+              <option value="+33">🇫🇷 +33</option>
+              <option value="+49">🇩🇪 +49</option>
+              <option value="+39">🇮🇹 +39</option>
+              <option value="+81">🇯🇵 +81</option>
+              <option value="+86">🇨🇳 +86</option>
+              <option value="+91">🇮🇳 +91</option>
+              <option value="+52">🇲🇽 +52</option>
+              <option value="+54">🇦🇷 +54</option>
+            </select>
+            <input
+              id="phoneInput"
+              type="tel"
+              placeholder="Número de teléfono"
+              class="flex-1 p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-gray-900 transition"
+              required
+            >
+          </div>
+          <button
+            type="submit"
+            class="w-full bg-[#00A2FF] text-white p-4 font-semibold rounded-lg hover:bg-[#0066CC] transition"
+          >
+            Continuar
+          </button>
+        </form>
+        
+        <div class="mt-4 text-center">
+          <p class="text-xs text-gray-500">Se te enviará un código de verificación por SMS</p>
         </div>
       </div>
       
@@ -2451,6 +2482,61 @@ setInterval(checkScheduledChapters, 60000);
       </button>
     </div>
   </div>
+
+  <!-- Modal de Verificación de SMS (Teléfono) -->
+  <div id="sms-verification-modal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl p-6 max-w-md w-full shadow-xl">
+      <div class="text-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Verificación por SMS</h2>
+        <p class="text-sm text-gray-600 mb-4">Hemos enviado un código a <span id="sms-phone-display" class="font-semibold text-gray-900"></span></p>
+      </div>
+
+      <form id="smsVerificationForm" class="space-y-4" onsubmit="event.preventDefault(); verifySMSCode();">
+        <input
+          id="smsCodeInput"
+          type="text"
+          placeholder="Código de 6 dígitos"
+          maxlength="6"
+          inputmode="numeric"
+          class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:border-[#00A2FF] transition text-center text-2xl font-bold letter-spacing tracking-widest"
+          required
+        >
+        
+        <button
+          type="submit"
+          class="w-full bg-[#00A2FF] text-white p-3 font-semibold rounded-lg hover:bg-[#0066CC] transition"
+        >
+          Verificar
+        </button>
+      </form>
+
+      <div id="sms-timer" class="mt-4 text-center text-sm text-gray-600">
+        <p>Código expira en: <span id="sms-countdown">60</span>s</p>
+      </div>
+
+      <div class="mt-4 text-center">
+        <button 
+          type="button"
+          id="resendSmsBtn"
+          onclick="resendSMSCode()"
+          class="text-sm text-[#00A2FF] hover:underline disabled:opacity-50 disabled:cursor-not-allowed"
+          disabled
+        >
+          Reenviar código
+        </button>
+      </div>
+
+      <div id="sms-error" class="mt-4 text-red-500 text-center text-sm hidden"></div>
+
+      <button
+        type="button"
+        class="w-full mt-4 text-gray-600 p-3 font-semibold rounded-lg hover:bg-gray-100 transition"
+        onclick="closeSMSModal()"
+      >
+        Cancelar
+      </button>
+    </div>
+  </div>
 </body>
 
 <!-- APLICACIÓN PRINCIPAL ESTILO TIKTOK (MODO CLARO) -->
@@ -2545,6 +2631,56 @@ setInterval(checkScheduledChapters, 60000);
       padding: 1rem;
       background: linear-gradient(135deg, rgba(0, 162, 255, 0.1), rgba(0, 162, 255, 0.05));
       border-radius: 0.5rem;
+    }
+    
+    /* Estilos para el Modal de Verificación SMS */
+    #sms-verification-modal {
+      animation: slideUp 0.3s ease-out;
+    }
+    
+    #sms-verification-modal.hidden {
+      animation: slideDown 0.3s ease-out forwards;
+    }
+    
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    
+    @keyframes slideDown {
+      from {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+    }
+    
+    /* Estilo especial para input de código SMS */
+    #smsCodeInput {
+      font-family: 'Courier New', monospace !important;
+      letter-spacing: 8px !important;
+      font-size: 24px !important;
+      font-weight: bold !important;
+      text-align: center !important;
+    }
+    
+    #smsCodeInput::placeholder {
+      letter-spacing: 2px !important;
+      font-size: 14px !important;
+    }
+    
+    #smsCodeInput:focus {
+      border-color: #00A2FF !important;
+      box-shadow: 0 0 0 3px rgba(0, 162, 255, 0.1) !important;
     }
     </style>
     
@@ -11020,6 +11156,187 @@ async function likeNote(noteId) {
     document.getElementById('forgot-password-form').classList.add('hidden');
     document.getElementById('password-form').classList.remove('hidden');
   }
+  
+  // ==================== SISTEMA DE AUTENTICACIÓN POR TELÉFONO ====================
+  
+  let phoneVerificationData = {
+    phone: null,
+    smsCode: null,
+    attempts: 0,
+    maxAttempts: 3,
+    codeExpiry: null
+  };
+  
+  let smsResendTimer = null;
+  let smsCountdownTimer = null;
+  
+  function handlePhoneLogin() {
+    const countryCode = document.getElementById('countryCode').value;
+    const phoneNumber = document.getElementById('phoneInput').value.trim();
+    
+    // Validar teléfono
+    if (!phoneNumber || phoneNumber.length < 7) {
+      showPhoneError('Ingresa un número de teléfono válido');
+      return;
+    }
+    
+    const fullPhone = countryCode + phoneNumber.replace(/\D/g, '');
+    
+    // Simular envío de SMS
+    sendPhoneVerificationCode(fullPhone);
+  }
+  
+  function sendPhoneVerificationCode(phone) {
+    // Generar código de verificación de 6 dígitos
+    const smsCode = Math.floor(100000 + Math.random() * 900000).toString();
+    
+    // Almacenar datos
+    phoneVerificationData.phone = phone;
+    phoneVerificationData.smsCode = smsCode;
+    phoneVerificationData.attempts = 0;
+    phoneVerificationData.codeExpiry = Date.now() + (5 * 60 * 1000); // 5 minutos
+    
+    // Log del código (en producción, se enviaría por SMS real)
+    console.log(`📱 Código SMS enviado a ${phone}: ${smsCode}`);
+    
+    // Mostrar modal de verificación
+    showSMSVerificationModal(phone);
+    
+    // Iniciar contador regresivo
+    startSMSCountdown();
+    
+    // En desarrollo, mostrar notificación
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      alert(`📱 Código de prueba: ${smsCode}\n(Válido por 5 minutos)`);
+    }
+  }
+  
+  function showSMSVerificationModal(phone) {
+    document.getElementById('email-form').classList.add('hidden');
+    document.getElementById('sms-phone-display').textContent = phone;
+    document.getElementById('smsCodeInput').value = '';
+    document.getElementById('sms-verification-modal').classList.remove('hidden');
+    document.getElementById('sms-error').classList.add('hidden');
+    document.getElementById('resendSmsBtn').disabled = true;
+  }
+  
+  function closeSMSModal() {
+    document.getElementById('sms-verification-modal').classList.add('hidden');
+    document.getElementById('email-form').classList.remove('hidden');
+    document.getElementById('phoneInput').value = '';
+    
+    // Limpiar timers
+    clearTimeout(smsResendTimer);
+    clearInterval(smsCountdownTimer);
+  }
+  
+  function verifySMSCode() {
+    const userCode = document.getElementById('smsCodeInput').value;
+    const smsError = document.getElementById('sms-error');
+    
+    // Validar código de longitud
+    if (userCode.length !== 6 || !/^\d+$/.test(userCode)) {
+      smsError.textContent = 'Ingresa un código de 6 dígitos válido';
+      smsError.classList.remove('hidden');
+      return;
+    }
+    
+    // Verificar si el código expiró
+    if (Date.now() > phoneVerificationData.codeExpiry) {
+      smsError.textContent = 'El código ha expirado. Solicita uno nuevo.';
+      smsError.classList.remove('hidden');
+      return;
+    }
+    
+    // Verificar intentos fallidos
+    if (phoneVerificationData.attempts >= phoneVerificationData.maxAttempts) {
+      smsError.textContent = 'Demasiados intentos. Solicita un nuevo código.';
+      smsError.classList.remove('hidden');
+      return;
+    }
+    
+    // Verificar código
+    if (userCode === phoneVerificationData.smsCode) {
+      // Código correcto
+      console.log(`✅ Verificación SMS exitosa para ${phoneVerificationData.phone}`);
+      
+      // Crear/autenticar usuario por teléfono
+      authenticateWithPhone(phoneVerificationData.phone);
+      
+      // Cerrar modal
+      closeSMSModal();
+      
+      // Mostrar mensaje de éxito
+      alert('¡Verificación exitosa! Bienvenido a Nuevoo');
+    } else {
+      // Código incorrecto
+      phoneVerificationData.attempts++;
+      const intentosRestantes = phoneVerificationData.maxAttempts - phoneVerificationData.attempts;
+      
+      if (intentosRestantes > 0) {
+        smsError.textContent = `Código incorrecto. ${intentosRestantes} intento${intentosRestantes > 1 ? 's' : ''} restante${intentosRestantes > 1 ? 's' : ''}`;
+      } else {
+        smsError.textContent = 'Demasiados intentos. Solicita un nuevo código.';
+      }
+      
+      smsError.classList.remove('hidden');
+      document.getElementById('smsCodeInput').value = '';
+      document.getElementById('smsCodeInput').focus();
+    }
+  }
+  
+  function startSMSCountdown() {
+    let countdown = 60;
+    document.getElementById('sms-countdown').textContent = countdown;
+    
+    smsCountdownTimer = setInterval(() => {
+      countdown--;
+      document.getElementById('sms-countdown').textContent = countdown;
+      
+      if (countdown <= 0) {
+        clearInterval(smsCountdownTimer);
+        document.getElementById('resendSmsBtn').disabled = false;
+      }
+    }, 1000);
+  }
+  
+  function resendSMSCode() {
+    document.getElementById('resendSmsBtn').disabled = true;
+    document.getElementById('sms-error').classList.add('hidden');
+    
+    // Reenviar código
+    sendPhoneVerificationCode(phoneVerificationData.phone);
+    
+    // Mostrar feedback
+    alert('✅ Código reenviado a ' + phoneVerificationData.phone);
+  }
+  
+  function showPhoneError(message) {
+    alert(`⚠️ ${message}`);
+  }
+  
+  function authenticateWithPhone(phone) {
+    // En producción, usar Firebase Authentication con teléfono
+    // firebase.auth().signInWithPhoneNumber(phone, appVerifier)
+    
+    // Para desarrollo, crear sesión simulada
+    const userData = {
+      uid: 'phone_' + Date.now(),
+      phone: phone,
+      displayName: 'Usuario Teléfono',
+      createdAt: new Date().toISOString(),
+      authMethod: 'phone'
+    };
+    
+    // Guardar en localStorage para simulación
+    localStorage.setItem('currentPhoneUser', JSON.stringify(userData));
+    console.log('✅ Usuario autenticado por teléfono:', userData);
+    
+    // En una aplicación real, esto triggeraría el evento de autenticación
+    // Se puede emular con Firebase
+  }
+  
+  // ==================== FIN SISTEMA DE AUTENTICACIÓN POR TELÉFONO ====================
   
   // Sistema de detección de reinicio y CAPTCHA
   const RECOVERY_ATTEMPT_KEY = 'recovery_attempt_data';
