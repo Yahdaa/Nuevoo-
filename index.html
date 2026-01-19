@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenvio - Historias y Relatos</title>
+  <title>Atenis - Historias y Relatos</title>
   
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4653147807800151" crossorigin="anonymous"></script>
   <!-- Google Fonts -->
@@ -1037,7 +1037,7 @@ setInterval(checkScheduledChapters, 60000);
               </svg>
             </div>
             <div class="flex-1">
-              <p class="text-sm text-gray-900 font-medium mb-1">Bienvenido a Zenvio</p>
+              <p class="text-sm text-gray-900 font-medium mb-1">Bienvenido a Atenis</p>
               <p class="text-sm text-gray-600">Gracias por unirte a nuestra comunidad de escritores y lectores.</p>
               <span class="text-xs text-gray-400 mt-1 block">Ahora</span>
             </div>
@@ -2141,8 +2141,8 @@ setInterval(checkScheduledChapters, 60000);
     
     if (navigator.share) {
       navigator.share({
-        title: 'Mi perfil en Zenvio',
-        text: 'Sígueme en Zenvio',
+        title: 'Mi perfil en Atenis',
+        text: 'Sígueme en Atenis',
         url: profileUrl
       });
     } else {
@@ -2199,7 +2199,7 @@ setInterval(checkScheduledChapters, 60000);
   
   <div id="auth-form" class="w-full h-screen flex flex-col justify-center p-6" style="display: none; opacity: 0;">
     <!-- Centered title -->
-    <h1 id="auth-title" class="text-4xl font-bold text-center mb-8 text-[#00A2FF]">Zenvio</h1>
+    <h1 id="auth-title" class="text-4xl font-bold text-center mb-8 text-[#00A2FF]">Atenis</h1>
     <!-- Form takes full available width -->
     <form id="authForm" class="w-full space-y-6 max-w-lg mx-auto">
       <input
@@ -2248,7 +2248,7 @@ setInterval(checkScheduledChapters, 60000);
 <div id="main-app" class="h-screen flex flex-col font-sans text-black" style="display: none; opacity: 0; background: #F2F4F5;">
   <!-- TOP BAR ESTILO ROBLOX -->
   <div id="top-navbar" class="flex items-center justify-between px-4 py-3 sticky top-0 z-50" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 162, 255, 0.2);">
-    <h1 id="app-name" class="text-2xl font-bold" style="color: #00A2FF;">Zenvio</h1>
+    <h1 id="app-name" class="text-2xl font-bold" style="color: #00A2FF;">Atenis</h1>
     <div class="flex items-center space-x-4">
       <button onclick="openNotifications()" aria-label="Notificaciones" class="relative w-6 h-6 hover:text-[#00A2FF] transition" style="color: #393B3D;">
         <svg class="w-full h-full" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -2641,7 +2641,7 @@ firebase.auth().onAuthStateChanged(user => {
         </svg>
       </button>
       <h1 class="text-lg font-semibold text-gray-900 flex items-center">
-        <span class="bg-gradient-to-r from-[#00A2FF] via-[#ff6b7a] to-[#25F4EE] bg-clip-text text-transparent">Zenvio AI</span>
+        <span class="bg-gradient-to-r from-[#00A2FF] via-[#ff6b7a] to-[#25F4EE] bg-clip-text text-transparent">Atenis AI</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="ml-2 h-5 w-5 text-purple-600 transform transition-transform duration-300 hover:rotate-12 hover:-translate-y-1" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 2L9 12L12 15L15 12L12 2Z"/>
           <path d="M12 15L9 12L2 14L5 17L12 15Z"/>
@@ -2694,7 +2694,7 @@ firebase.auth().onAuthStateChanged(user => {
           </div>
           <div class="flex-1">
             <div class="bg-gray-100 rounded-2xl rounded-tl-none p-3 max-w-xs">
-              <p class="text-gray-900 text-sm">¡Hola! Soy Zenvio AI. Puedo ayudarte a crear historias, generar ideas, responder preguntas y <strong>generar imágenes</strong>. Solo pídeme "genera una imagen de..." ¿En qué puedo ayudarte hoy?</p>
+              <p class="text-gray-900 text-sm">¡Hola! Soy Atenis AI. Puedo ayudarte a crear historias, generar ideas, responder preguntas y <strong>generar imágenes</strong>. Solo pídeme "genera una imagen de..." ¿En qué puedo ayudarte hoy?</p>
             </div>
             <span class="text-xs text-gray-500 mt-1 block">Ahora</span>
           </div>
@@ -2910,7 +2910,7 @@ function closeZenvioChat() {
   if (bottomNav) bottomNav.style.display = 'block';
 }
 
-// Función para cambiar entre tabs de Zenvio AI
+// Función para cambiar entre tabs de Atenis AI
 function switchZenvioTab(tabName) {
   // Ocultar todos los contenidos
   document.querySelectorAll('.zenvio-tab-content').forEach(content => {
@@ -3213,17 +3213,17 @@ function copyWorld() {
   });
 }
 
-// Menú de Zenvio AI
+// Menú de Atenis AI
 function openZenvioMenu() {
   const menu = document.createElement('div');
   menu.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-[60]';
   menu.innerHTML = `
     <div class="bg-white rounded-2xl p-6 max-w-sm mx-4 transform transition-all">
-      <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Zenvio AI</h3>
+      <h3 class="text-xl font-bold text-gray-900 mb-4 text-center">Atenis AI</h3>
       <div class="space-y-3">
         <div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
           <p class="text-sm text-gray-700 leading-relaxed">
-            <strong>Zenvio AI</strong> es tu asistente creativo impulsado por inteligencia artificial.
+            <strong>Atenis AI</strong> es tu asistente creativo impulsado por inteligencia artificial.
           </p>
         </div>
         <div class="text-sm text-gray-600 space-y-2">
@@ -3458,7 +3458,7 @@ function getSmartLocalResponse(message) {
   
   // Saludos
   if (msg.includes('hola') || msg.includes('hey') || msg.includes('hi')) {
-    return '¡Hola! 🚀 Soy Zenvio AI. Puedo ayudarte a crear historias, generar ideas o crear imágenes. ¿En qué te ayudo hoy?';
+    return '¡Hola! 🚀 Soy Atenis AI. Puedo ayudarte a crear historias, generar ideas o crear imágenes. ¿En qué te ayudo hoy?';
   }
   
   // Agradecimientos
@@ -3616,7 +3616,7 @@ async function generateImageInChat(prompt) {
 function downloadChatImage(imageUrl) {
   const link = document.createElement('a');
   link.href = imageUrl;
-  link.download = 'zenvio-ai-image.jpg';
+  link.download = 'atenis-ai-image.jpg';
   link.click();
 }
 
@@ -3625,9 +3625,9 @@ function shareChatImage(imageUrl) {
     fetch(imageUrl)
       .then(res => res.blob())
       .then(blob => {
-        const file = new File([blob], 'zenvio-ai-image.jpg', { type: 'image/jpeg' });
+        const file = new File([blob], 'atenis-ai-image.jpg', { type: 'image/jpeg' });
         navigator.share({
-          title: 'Imagen generada con Zenvio AI',
+          title: 'Imagen generada con Atenis AI',
           files: [file]
         });
       })
@@ -5154,7 +5154,7 @@ function clearSearchInput() {
     object-fit: contain;
   }
 
-  /* Animaciones Zenvio AI */
+  /* Animaciones Atenis AI */
   .zenvio-ai-icon {
     animation: zenvioFloat 3s ease-in-out infinite, zenvioGlow 2s ease-in-out infinite;
   }
@@ -5220,7 +5220,7 @@ function clearSearchInput() {
     }
   }
 
-  /* Estilos para tabs de Zenvio AI */
+  /* Estilos para tabs de Atenis AI */
   .zenvio-tab {
     transition: all 0.3s ease;
   }
@@ -5304,80 +5304,75 @@ function clearSearchInput() {
 <!-- PERFIL PROPIO CON SUBIDA DE FOTO EN TIEMPO REAL -->
 <div id="profile-view" class="fixed inset-0 overflow-y-auto z-40 hidden bg-white text-black scrollbar-hide">
   <!-- Vista móvil -->
-  <div class="block lg:hidden p-4 max-w-md mx-auto">
-    <!-- Header con botón volver y botones de acción estilo Roblox -->
-    <div class="flex justify-between items-center mb-4 p-3 rounded-lg" style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(0, 162, 255, 0.2);">
-      <button onclick="openHome()" class="font-medium flex items-center hidden" style="color: #00A2FF;">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline mr-1" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <polyline points="15 18 9 12 15 6" />
-        </svg>
-        <span id="btn-volver-profile">Volver</span>
-      </button>
-      
-      <!-- Botones de acción en la esquina superior derecha -->
-      <div class="flex items-center space-x-2">
-        <!-- Botón de crear historia -->
-        <button onclick="openStoryCreation()" class="p-2 hover:bg-gray-100 rounded-full transition-all" style="color: #00A2FF;">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+  <div class="block lg:hidden">
+    <!-- Header estilo Instagram -->
+    <div class="sticky top-0 bg-white border-b border-gray-200 px-4 py-3 z-10">
+      <div class="flex items-center justify-between">
+        <button onclick="openHome()" class="p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
           </svg>
         </button>
-        
-        <!-- Botón de menú (3 líneas) -->
-        <button onclick="openMenuModal()" class="p-2 hover:bg-gray-100 rounded-full transition-all" style="color: #00A2FF;">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        <h2 id="profile-username-header" class="text-base font-semibold">@nombre_usuario</h2>
+        <button onclick="openMenuModal()" class="p-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
     </div>
 
-    <div class="flex flex-col items-center">
-      <!-- Imagen de perfil centrada -->
-      <div class="relative mb-4">
-
-        
-        <!-- Imagen de perfil (SOLO VISUALIZACIÓN) -->
-        <div class="relative block">
-          <img id="profile-image" src="https://via.placeholder.com/150" class="w-24 h-24 rounded-full object-cover relative z-0" style="border: 3px solid #00A2FF;" alt="Foto de perfil">
+    <!-- Contenido del perfil -->
+    <div class="p-4">
+      <!-- Sección superior: foto, stats y botones -->
+      <div class="flex items-start mb-4">
+        <!-- Foto de perfil -->
+        <div class="mr-4">
+          <img id="profile-image" src="https://via.placeholder.com/150" class="w-20 h-20 rounded-full object-cover" style="border: 2px solid #00A2FF;" alt="Foto de perfil">
         </div>
         
-
+        <!-- Estadísticas -->
+        <div class="flex-1">
+          <div class="flex justify-around mb-3">
+            <div class="text-center">
+              <div id="profile-stories-count" class="font-semibold text-base">0</div>
+              <div class="text-xs text-gray-500">Historias</div>
+            </div>
+            <button onclick="openMyFollowersModal()" class="text-center">
+              <div id="profile-followers" class="font-semibold text-base">0</div>
+              <div class="text-xs text-gray-500">Seguidores</div>
+            </button>
+            <button onclick="openMyFollowingModal()" class="text-center">
+              <div id="profile-following" class="font-semibold text-base">0</div>
+              <div class="text-xs text-gray-500">Siguiendo</div>
+            </button>
+          </div>
+          
+          <!-- Botones de acción -->
+          <div class="flex space-x-2">
+            <button onclick="openProfileEdit()" class="flex-1 bg-gray-100 text-black text-sm font-semibold py-1.5 rounded-lg hover:bg-gray-200 transition">
+              Editar perfil
+            </button>
+            <button onclick="openQRModal()" class="bg-gray-100 text-black text-sm font-semibold px-3 py-1.5 rounded-lg hover:bg-gray-200 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
 
-      <!-- Nombre de usuario con botón de editar -->
-      <div class="flex items-center justify-center mb-4">
-        <h2 id="profile-username" class="text-xl font-semibold mr-2">@nombre_usuario</h2>
-        <button onclick="openProfileEdit()" class="text-gray-600 hover:text-[#00A2FF] transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-          </svg>
-        </button>
-      </div>
-
-      <!-- Estadísticas de seguidores y siguiendo -->
-      <div class="flex space-x-8 mb-6">
-        <button onclick="openMyFollowersModal()" class="text-center focus:outline-none hover:opacity-80 transition-opacity">
-          <span id="profile-followers" class="font-bold text-[#00A2FF] text-xl">0</span>
-          <p class="text-sm text-gray-600">Seguidores</p>
-        </button>
-        <button onclick="openMyFollowingModal()" class="text-center focus:outline-none hover:opacity-80 transition-opacity">
-          <span id="profile-following" class="font-bold text-[#00A2FF] text-xl">0</span>
-          <p class="text-sm text-gray-600">Siguiendo</p>
-        </button>
-        <button onclick="openQRModal()" class="text-center focus:outline-none hover:opacity-80 transition-opacity">
-          <span class="font-bold text-[#00A2FF] text-xl">QR</span>
-          <p class="text-sm text-gray-600">Código QR</p>
-        </button>
+      <!-- Nombre y bio -->
+      <div class="mb-4">
+        <h2 id="profile-username" class="font-semibold text-sm">@nombre_usuario</h2>
+        <p id="profile-bio" class="text-sm text-gray-600 mt-1"></p>
       </div>
 
 
 
       <!-- Historias del usuario -->
-      <hr class="border-t border-gray-300 w-full my-4">
-      <div class="mt-6 w-full">
-        <h3 id="profile-stories-title" class="text-lg font-bold mb-2 text-[#00A2FF]">0 Historias</h3>
-        <div id="user-stories" class="grid grid-cols-2 gap-4"></div>
+      <div class="border-t border-gray-200 pt-4">
+        <div id="user-stories" class="grid grid-cols-3 gap-1"></div>
       </div>
     </div>
   </div>
@@ -5693,7 +5688,34 @@ document.addEventListener('DOMContentLoaded', function() {
               </svg>
               Instagram
             </label>
-            <input id="edit-instagram" type="url" class="w-full p-3 border border-gray-300 rounded-lg bg-white text-black focus:ring-2 focus:ring-[#00A2FF] focus:border-transparent transition" placeholder="https://instagram.com/tunombre">
+            <div class="flex items-center space-x-2">
+              <input id="edit-instagram" type="text" class="flex-1 p-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500" placeholder="@usuario" readonly>
+              <button onclick="connectInstagram()" class="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white px-4 py-3 rounded-lg flex items-center space-x-2 hover:opacity-90 transition-opacity font-medium">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <span>Conectar</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Facebook -->
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-700 flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Facebook
+            </label>
+            <div class="flex items-center space-x-2">
+              <input id="edit-facebook" type="text" class="flex-1 p-3 border border-gray-300 rounded-lg bg-gray-50 text-gray-500" placeholder="@usuario" readonly>
+              <button onclick="connectFacebook()" class="bg-blue-600 text-white px-4 py-3 rounded-lg flex items-center space-x-2 hover:bg-blue-700 transition-colors font-medium">
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+                <span>Conectar</span>
+              </button>
+            </div>
           </div>
 
           <!-- TikTok -->
@@ -11640,28 +11662,22 @@ document.getElementById('category-filter').addEventListener('change', performRea
       return;
     }
 
-    // Configuración de TikTok OAuth
     const CLIENT_KEY = 'aw5rur2hdvmp1wly';
     const REDIRECT_URI = encodeURIComponent(window.location.origin + '/tiktok-callback');
-    const STATE = user.uid; // Usamos el UID como state para seguridad
+    const STATE = user.uid;
     
-    // URL de autorización de TikTok
     const authUrl = `https://www.tiktok.com/v2/auth/authorize/?client_key=${CLIENT_KEY}&scope=user.info.basic&response_type=code&redirect_uri=${REDIRECT_URI}&state=${STATE}`;
     
-    // Abrir ventana de autorización
     const authWindow = window.open(authUrl, 'TikTok Authorization', 'width=600,height=700');
     
-    // Escuchar el mensaje de retorno
     window.addEventListener('message', function(event) {
       if (event.data.type === 'tiktok-auth-success') {
         const tiktokUsername = event.data.username;
         
-        // Guardar en Firebase
         firebase.database().ref('users/' + user.uid).update({
           tiktokUsername: tiktokUsername,
           tiktokConnected: true
         }).then(() => {
-          // Actualizar campos en la UI
           document.getElementById('edit-tiktok').value = '@' + tiktokUsername;
           const tiktokDesktop = document.getElementById('edit-tiktok-desktop');
           if (tiktokDesktop) {
@@ -11669,6 +11685,78 @@ document.getElementById('category-filter').addEventListener('change', performRea
           }
           
           alert('¡TikTok conectado exitosamente!');
+          authWindow.close();
+        });
+      }
+    });
+  }
+
+  function connectInstagram() {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      alert('Debes iniciar sesión primero');
+      return;
+    }
+
+    const CLIENT_ID = '1088597672289959';
+    const REDIRECT_URI = encodeURIComponent(window.location.origin + '/instagram-callback');
+    const STATE = user.uid;
+    
+    const authUrl = `https://api.instagram.com/oauth/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&scope=user_profile&response_type=code&state=${STATE}`;
+    
+    const authWindow = window.open(authUrl, 'Instagram Authorization', 'width=600,height=700');
+    
+    window.addEventListener('message', function(event) {
+      if (event.data.type === 'instagram-auth-success') {
+        const instagramUsername = event.data.username;
+        
+        firebase.database().ref('users/' + user.uid).update({
+          instagramUsername: instagramUsername,
+          instagramConnected: true
+        }).then(() => {
+          document.getElementById('edit-instagram').value = '@' + instagramUsername;
+          const instagramDesktop = document.getElementById('edit-instagram-desktop');
+          if (instagramDesktop) {
+            instagramDesktop.value = '@' + instagramUsername;
+          }
+          
+          alert('¡Instagram conectado exitosamente!');
+          authWindow.close();
+        });
+      }
+    });
+  }
+
+  function connectFacebook() {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+      alert('Debes iniciar sesión primero');
+      return;
+    }
+
+    const APP_ID = '1234567890';
+    const REDIRECT_URI = encodeURIComponent(window.location.origin + '/facebook-callback');
+    const STATE = user.uid;
+    
+    const authUrl = `https://www.facebook.com/v18.0/dialog/oauth?client_id=${APP_ID}&redirect_uri=${REDIRECT_URI}&state=${STATE}&scope=public_profile`;
+    
+    const authWindow = window.open(authUrl, 'Facebook Authorization', 'width=600,height=700');
+    
+    window.addEventListener('message', function(event) {
+      if (event.data.type === 'facebook-auth-success') {
+        const facebookUsername = event.data.username;
+        
+        firebase.database().ref('users/' + user.uid).update({
+          facebookUsername: facebookUsername,
+          facebookConnected: true
+        }).then(() => {
+          document.getElementById('edit-facebook').value = '@' + facebookUsername;
+          const facebookDesktop = document.getElementById('edit-facebook-desktop');
+          if (facebookDesktop) {
+            facebookDesktop.value = '@' + facebookUsername;
+          }
+          
+          alert('¡Facebook conectado exitosamente!');
           authWindow.close();
         });
       }
